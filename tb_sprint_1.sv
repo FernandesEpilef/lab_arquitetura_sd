@@ -4,16 +4,17 @@
 
 // porta xor2x1
 
-$display("-------------- PORTA XOR ----------------");
+//$display("-------------- PORTA XOR ----------------");
 
-module xor_tb;
+module xor_tb();
 
 logic sa;
 logic sb;
 logic saida;
 
-inital
-    begin
+xor_xor tes(.A(sa), .B(sb), .C(saida));
+
+initial  begin
         // para salvar em um arquivo .vdc
         $dumpfile("test_1.vdc");
         $dumpvars(1);
@@ -38,14 +39,15 @@ inital
         sb = 1'b1;
     
         #10
-        $display("finish";
+        $display("finish");
     end
     
 endmodule
 
 
-$display("-------------------- SOMADOR 4 BITS -------------------");
+//$display("-------------------- SOMADOR 4 BITS -------------------");
 
 
-module somador_tb;
+
+//module somador_tb;
 

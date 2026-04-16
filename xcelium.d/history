@@ -1,0 +1,19 @@
+//
+// File created by:  xrun
+// Do not modify this file
+
+s1::(15Apr2026:12:35:45):( xrun -timescale 1ns/1ps sprit_1.sv tb_sprint_1.sv )
+s2::(15Apr2026:12:36:54):( xrun -timescale 1ns/1ps sprit_1.sv tb_sprint_1.sv )
+s3::(15Apr2026:12:37:42):( xrun -timescale 1ns/1ps sprit_1.sv tb_sprint_1.sv )
+s4::(15Apr2026:12:38:40):( xrun -timescale 1ns/1ps sprit_1.sv tb_sprint_1.sv )
+s5::(15Apr2026:12:39:35):( xrun -timescale 1ns/1ps sprit_1.sv tb_sprint_1.sv )
+s6::(15Apr2026:12:40:36):( xrun -timescale 1ns/1ps sprit_1.sv tb_sprint_1.sv )
+s7::(15Apr2026:12:42:43):( xrun -timescale 1ns/1ps sprit_1.sv tb_sprint_1.sv )
+s8::(15Apr2026:12:43:02):( xrun -sv -timescale 1ns/1ps sprit_1.sv tb_sprint_1.sv )
+s9::(15Apr2026:12:43:48):( xrun -sv -timescale 1ns/1ps sprit_1.sv tb_sprint_1.sv )
+s10::(15Apr2026:12:44:09):( xrun -sv -timescale 1ns/1ps sprit_1.sv tb_sprint_1.sv )
+s11::(16Apr2026:13:13:31):( xrun -sv -timescale 1ns/1ps sprit_1.sv tb_sprint_1.sv )
+s12::(16Apr2026:13:13:58):( xrun -sv -timescale 1ns/1ps sprit_1.sv tb_sprint_1.sv )
+s13::(16Apr2026:13:15:17):( xrun -sv -timescale 1ns/1ps sprit_1.sv tb_sprint_1.sv )
+s14::(16Apr2026:13:17:06):( xrun -sv -timescale 1ns/1ps sprit_1.sv tb_sprint_1.sv )
+s15::(16Apr2026:13:19:08):( xrun -sv -timescale 1ns/1ps sprit_1.sv tb_sprint_1.sv )
