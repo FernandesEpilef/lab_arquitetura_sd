@@ -1,0 +1,45 @@
+xrun(64): 23.09-s003: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	23.09-s003: Started on Apr 16, 2026 at 15:17:49 -03
+xrun
+	-timescale 1ns/1ps
+	probl_3_4.sv
+	tb_3_4.sv
+file: probl_3_4.sv
+	module worklib.somador_dor:sv
+		errors: 0, warnings: 0
+file: tb_3_4.sv
+	module worklib.somador:sv
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		somador
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.somador_dor:sv <0x7c15f7b9>
+			streams:   1, words:   187
+		worklib.somador:sv <0x4237161a>
+			streams:   5, words:  6080
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 2       2
+		Registers:               3       3
+		Vectored wires:          4       -
+		Initial blocks:          1       1
+		Cont. assignments:       1       1
+		Pseudo assignments:      3       -
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.somador:sv
+Loading snapshot worklib.somador:sv .................... Done
+xcelium> source /Tools/cadence/XCELIUM2309/tools/xcelium/files/xmsimrc
+xcelium> run
+tempo = 3                   0  A =  0  B =  0  saida =  0
+tempo = 3                  10  A =  2  B =  3  saida =  5
+tempo = 3                  20  A =  5  B =  5  saida = 10
+finichi
+Simulation complete via $finish(1) at time 30 NS + 0
+./tb_3_4.sv:31         $finish;
+xcelium> exit
+TOOL:	xrun(64)	23.09-s003: Exiting on Apr 16, 2026 at 15:17:51 -03  (total: 00:00:02)
