@@ -1,9 +1,0 @@
-//
-// File created by:  xrun
-// Do not modify this file
-//
--sv
--timescale
-1ns/1ps
-sprit_1.sv
-tb_sprint_1.sv
