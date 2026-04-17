@@ -1,0 +1,48 @@
+xrun(64): 23.09-s003: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	23.09-s003: Started on Apr 17, 2026 at 07:54:45 -03
+xrun
+	-timescale 1ns/1ps
+	desafio.sv
+	tb_desa.sv
+file: tb_desa.sv
+	module worklib.ulalaa:sv
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		ulalaa
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.ula_la:sv <0x06e03181>
+			streams:   1, words:  1274
+		worklib.ulalaa:sv <0x0b499753>
+			streams:   7, words: 10501
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 2       2
+		Registers:               8       8
+		Scalar wires:            2       -
+		Vectored wires:          5       -
+		Always blocks:           1       1
+		Initial blocks:          1       1
+		Pseudo assignments:      5       -
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.ulalaa:sv
+Loading snapshot worklib.ulalaa:sv .................... Done
+xcelium> source /Tools/cadence/XCELIUM2309/tools/xcelium/files/xmsimrc
+xcelium> run
+Tempo =                    0; S = xx; A =  x; B =  x; R =  0; OVER = 0
+Tempo =                   10; S = 00; A =  5; B =  5; R = 10; OVER = 0
+Tempo =                   20; S = 00; A = 15; B =  1; R =  0; OVER = 1
+Tempo =                   30; S = 01; A =  8; B =  3; R =  5; OVER = 0
+Tempo =                   40; S = 01; A =  2; B =  5; R = 13; OVER = 1
+Tempo =                   50; S = 10; A = 12; B =  1; R =  6; OVER = 0
+Tempo =                   60; S = 10; A = 12; B =  2; R =  3; OVER = 0
+Tempo =                   70; S = 11; A =  3; B =  1; R =  6; OVER = 0
+finishi
+Simulation complete via $finish(1) at time 80 NS + 0
+./tb_desa.sv:60 		$finish;
+xcelium> exit
+TOOL:	xrun(64)	23.09-s003: Exiting on Apr 17, 2026 at 07:54:47 -03  (total: 00:00:02)

@@ -1,0 +1,46 @@
+xrun(64): 23.09-s003: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	23.09-s003: Started on Apr 16, 2026 at 15:26:03 -03
+xrun
+	-timescale 1ns/1ps
+	probl_5_6.sv
+	tb_5_6.sv
+file: probl_5_6.sv
+	module worklib.musk:sv
+		errors: 0, warnings: 0
+file: tb_5_6.sv
+	module worklib.musk_tb:sv
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		musk_tb
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.musk:sv <0x4ce4bf20>
+			streams:   1, words:   215
+		worklib.musk_tb:sv <0x3838ca34>
+			streams:   6, words:  6553
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 2       2
+		Registers:               5       5
+		Scalar wires:            1       -
+		Vectored wires:          5       -
+		Initial blocks:          1       1
+		Cont. assignments:       1       1
+		Pseudo assignments:      4       -
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.musk_tb:sv
+Loading snapshot worklib.musk_tb:sv .................... Done
+xcelium> source /Tools/cadence/XCELIUM2309/tools/xcelium/files/xmsimrc
+xcelium> run
+Tempo =   0 | Sel = x | In0 = 10 | In1 =  5 | Out =  x
+Tempo =  10 | Sel = 0 | In0 = 10 | In1 =  5 | Out = 10
+Tempo =  20 | Sel = 1 | In0 =  3 | In1 =  7 | Out =  7
+Testes do MUX Concluídos
+Simulation complete via $finish(1) at time 30 NS + 0
+./tb_5_6.sv:31         $finish;
+xcelium> exit
+TOOL:	xrun(64)	23.09-s003: Exiting on Apr 16, 2026 at 15:26:03 -03  (total: 00:00:00)

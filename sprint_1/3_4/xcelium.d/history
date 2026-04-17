@@ -1,0 +1,7 @@
+//
+// File created by:  xrun
+// Do not modify this file
+
+s1::(16Apr2026:15:23:33):( xrun -timescale 1ns/1ps probl_3_4.sv tb_3_4.sv )
+s2::(16Apr2026:15:28:57):( xrun -timescale 1ns/1ps probl_5_6.sv tb_5_6.sv )
+s3::(16Apr2026:15:29:04):( xrun -timescale 1ns/1ps probl_3_4.sv tb_3_4.sv )

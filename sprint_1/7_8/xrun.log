@@ -1,0 +1,48 @@
+xrun(64): 23.09-s003: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	23.09-s003: Started on Apr 17, 2026 at 07:28:47 -03
+xrun
+	-timescale 1ns/1ps
+	probl_7_8.sv
+	probl_3_4.sv
+	probl_5_6.sv
+	tb_7_8.sv
+Recompiling... reason: file './tb_7_8.sv' is newer than expected.
+	expected: Fri Apr 17 06:53:10 2026
+	actual:   Fri Apr 17 07:28:45 2026
+file: tb_7_8.sv
+	module worklib.jucao_tb:sv
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		jucao_tb
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.jucao_tb:sv <0x4b517409>
+			streams:   7, words:  9626
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 4       4
+		Registers:               8       8
+		Scalar wires:            1       -
+		Vectored wires:         11       -
+		Initial blocks:          1       1
+		Cont. assignments:       2       2
+		Pseudo assignments:      8       -
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.jucao_tb:sv
+Loading snapshot worklib.jucao_tb:sv .................... Done
+xcelium> source /Tools/cadence/XCELIUM2309/tools/xcelium/files/xmsimrc
+xcelium> run
+Tempo =                    0; S = 0; A =  0; B =  0; C =  0; R =  0
+Tempo =                   10; S = 1; A =  0; B =  0; C =  0; R =  0
+Tempo =                   20; S = 0; A =  2; B =  3; C = 10; R =  5
+Tempo =                   30; S = 1; A =  2; B =  3; C = 10; R = 12
+Tempo =                   40; S = 0; A =  2; B =  5; C =  1; R =  7
+finishi
+Simulation complete via $finish(1) at time 50 NS + 0
+./tb_7_8.sv:55 		$finish;
+xcelium> exit
+TOOL:	xrun(64)	23.09-s003: Exiting on Apr 17, 2026 at 07:28:48 -03  (total: 00:00:01)
