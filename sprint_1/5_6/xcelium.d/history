@@ -1,5 +1,0 @@
-//
-// File created by:  xrun
-// Do not modify this file
-
-s1::(16Apr2026:15:26:03):( xrun -timescale 1ns/1ps probl_5_6.sv tb_5_6.sv )

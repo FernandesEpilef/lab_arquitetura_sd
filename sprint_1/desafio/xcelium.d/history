@@ -1,6 +1,0 @@
-//
-// File created by:  xrun
-// Do not modify this file
-
-s1::(17Apr2026:07:54:01):( xrun -timescale 1ns/1ps desafio.sv tb_desa.sv )
-s2::(17Apr2026:07:54:45):( xrun -timescale 1ns/1ps desafio.sv tb_desa.sv )

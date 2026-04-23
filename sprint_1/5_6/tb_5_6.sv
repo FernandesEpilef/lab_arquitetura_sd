@@ -10,24 +10,20 @@ module musk_tb;
         //$dumpfile("dump.vcd"); 
 	//$dumpvars(1);
         $monitor("Tempo = %3d | Sel = %b | In0 = %d | In1 = %d | Out = %d", $time, sel, i0, i1, saida);
-		
-
-        i0 = 4'd10; 
-	i1 = 4'd5;
+	
+	i0 = 4'd7;
+	i1 = 4'd3;	
         
 	#10
-        sel = 1'b0;  // Deve sair In0 (10)
+        sel = 1'b0;  // 0 para i0
 
         #10
-	sel = 1'b1;  // Deve sair In1 (5)
-        
-        i0 = 4'd3; i1 = 4'd7;
-
-	#10
-        sel = 1'b0; // Deve sair In0 (3)
-        sel = 1'b1; // Deve sair In1 (7)
-        
-        $display("Testes do MUX Concluídos");
+	sel = 1'b1;  // 1 para i1
+        i0 = 4'd7; 
+	i1 = 4'd3;
+    
+    	#10    
+        $display("cabousse");
         $finish;
     end
 endmodule

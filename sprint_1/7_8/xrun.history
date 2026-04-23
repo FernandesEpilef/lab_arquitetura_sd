@@ -1,3 +1,0 @@
-s1(17Apr2026:06:54:23):  xrun -timescale 1ns/1ps probl_7_8.sv tb_7_8.sv 
-s2(17Apr2026:06:54:42):  xrun -timescale 1ns/1ps probl_7_8.sv probl_3_4.sv probl_5_6.sv tb_7_8.sv 
-s3(17Apr2026:07:28:47):  xrun -timescale 1ns/1ps probl_7_8.sv probl_3_4.sv probl_5_6.sv tb_7_8.sv 
