@@ -1,5 +1,3 @@
-`timescale 1ns/1ps
-
 module soma_mux_reg (
     input  logic       clk,
     input  logic       rst_n,
@@ -27,12 +25,12 @@ module soma_mux_reg (
         .C(soma_resultado)
     );
 
-    registrador4 u_reg (
+    registrador_dor u_reg (
         .clk   (clk),
         .rst_n (rst_n),
         .enable(enable),
-        .in    (soma_resultado),
-        .out   (R)
+        .entra    (soma_resultado),
+        .sai   (R)
     );
 
 endmodule
