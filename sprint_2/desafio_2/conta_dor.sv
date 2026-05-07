@@ -1,5 +1,3 @@
-`timescale 1ns/1ps
-
 module conta_dor(
     input  logic       clk,
     input  logic       rst_n,
@@ -29,8 +27,8 @@ module conta_dor(
         .clk   (clk),
         .rst_n (rst_n),
         .enable(enable),
-        .in    (proximo_valor),
-        .out   (count)
+        .entra   (proximo_valor),
+        .sai   (count)
     );
 
 endmodule

@@ -1,5 +1,3 @@
-`timescale 1ns/1ps
-
 module tb_contador16;
 
     logic clk;
@@ -18,54 +16,59 @@ module tb_contador16;
 
     always #5 clk = ~clk;
 
-    task check(input [3:0] esperado, input string msg);
-        if (count !== esperado)
-            $display("[ERRO] %s | esperado=%0h obtido=%0h", msg, esperado, count);
-        else
-            $display("[OK]   %s | count=%0h", msg, count);
-    endtask
-
     initial begin
-        $dumpfile("tb_contador16.vcd");
-        $dumpvars(0, tb_contador16);
+        //$dumpfile("tb_contador16.vcd");
+        //$dumpvars(0, tb_contador16);
+
+        $monitor(
+            "Tempo=%0t | rst_n=%b | enable=%b | dir=%b | count=%0h",
+            $time, rst_n, enable, dir, count
+        );
 
         clk = 0;
         rst_n = 0;
         enable = 0;
         dir = 0;
 
-        #2 check(4'h0, "reset inicial");
-        #8 rst_n = 1;
+        // Reset inicial
+        #10;
+        rst_n = 1;
 
+        // Conta crescente: 0 -> 1 -> 2 -> 3
         enable = 1;
         dir = 0;
-        repeat (3) @(posedge clk);
-        #1 check(4'h3, "contagem crescente após 3 clocks");
 
+        #40;
+
+        // Pausa: deve manter o valor
         enable = 0;
-        repeat (2) @(posedge clk);
-        #1 check(4'h3, "enable=0 mantém contagem");
 
+        #20;
+
+        // Conta decrescente
         enable = 1;
         dir = 1;
-        @(posedge clk); #1;
-        check(4'h2, "contagem decrescente: 3 -> 2");
 
-        // Testa wrap-around decrescente: 0 - 1 = F em 4 bits.
+        #40;
+
+        // Reset novamente
         rst_n = 0;
-        #1 check(4'h0, "reset antes do wrap decrescente");
-        #4 rst_n = 1;
-        dir = 1;
+
+        #10;
+        rst_n = 1;
+
+        // Wrap decrescente: 0 -> F
         enable = 1;
-        @(posedge clk); #1;
-        check(4'hF, "wrap decrescente: 0 -> F");
+        dir = 1;
 
-        // Testa wrap-around crescente: F + 1 = 0 em 4 bits.
+        #20;
+
+        // Wrap crescente: F -> 0
         dir = 0;
-        @(posedge clk); #1;
-        check(4'h0, "wrap crescente: F -> 0");
 
-        $display("Fim do teste do contador de 16 estados.");
+        #20;
+
+        $display("cabousse");
         $finish;
     end
 

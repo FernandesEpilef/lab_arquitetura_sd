@@ -1,5 +1,3 @@
-`timescale 1ns/1ps
-
 module musk (
     input  logic [3:0] i0,
     input  logic [3:0] i1,

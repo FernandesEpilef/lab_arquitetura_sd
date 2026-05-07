@@ -1,5 +1,3 @@
-`timescale 1ns/1ps
-
 module registra_dor (
     input  logic       clk,
     input  logic       rst_n,   // reset assíncrono ativo em 0
