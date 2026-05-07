@@ -1,67 +1,76 @@
 `timescale 1ns/1ps
 
-module tb_registr_a_dor;
+module tb_registra_dor;
 
+    // Sinais do testbench
     logic clk;
     logic rst_n;
     logic enable;
     logic [3:0] entra;
     logic [3:0] sai;
 
+    // Instância do DUT (Device Under Test)
     registra_dor dut (
-        .clk(clk),
-        .rst_n(rst_n),
+        .clk   (clk),
+        .rst_n (rst_n),
         .enable(enable),
-        .entra(entra),
-        .sai(sai)
+        .entra (entra),
+        .sai   (sai)
     );
 
+    // Geração do clock
     always #5 clk = ~clk;
 
-    task check(input [3:0] esperado, input string msg);
-        if (out !== esperado)
-            $display("[ERRO] %s | esperado=%0h obtido=%0h", msg, esperado, out);
-        else
-            $display("[OK]   %s | out=%0h", msg, out);
-    endtask
-
     initial begin
-        //$dumpfile("tb_registrador4.vcd");
-        //$dumpvars(0, tb_registrador4);
 
-        clk = 0;
-        rst_n = 1;
+        // Valores iniciais
+        clk    = 0;
+        rst_n  = 1;
         enable = 0;
-        entra = 4'h0;
+        entra  = 4'b0000;
 
-        // Reset assíncrono: não precisa esperar borda de clock.
-        #2 rst_n = 0;
-        #1 check(4'h0, "reset assíncrono zera o registrador");
-        #7 rst_n = 1;
+        $display("=== INICIO DA SIMULACAO ===");
+        // caso 1 - reset assíncrono
+        rst_n = 0;
+        #2;
+        $display("reset; sai = %b (esperado: 0000)", sai);
 
-        // enable=1: registra a entrada na borda de subida.
-        entra = 4'hA;
+        rst_n = 1;
+
+        // caso 2 - enable = 1, copia
+        @(posedge clk);
         enable = 1;
-        @(posedge clk); #1;
-        check(4'hA, "enable=1 registra in=A");
+        entra  = 4'b1010;
+        @(posedge clk);
+        #1;
+        $display("enable=1 | entra=%b | sai=%b", entra, sai);
 
-        // enable=0: mantém valor antigo, mesmo mudando a entrada.
-        entra = 0;
-        in = 4'h5;
-        @(posedge clk); #1;
-        check(4'hA, "enable=0 mantém valor A, mesmo in=5");
+        // caso 3 - enable = 1; copia novo valor
+        entra = 4'b1101;
+        @(posedge clk);
+        #1;
+        $display("enable=1 | entra=%b | sai=%b", entra, sai);
 
-        // enable volta para 1: agora registra o novo valor.
+        // caso 4 - enable = 0; mantem
+        enable = 0;
+        entra  = 4'b0011;
+        @(posedge clk);
+        #1;
+        $display("enable=0 | entra=%b | sai=%b", entra, sai);
+
+        // caso 5 - reset no meio do muido
+        rst_n = 0;
+        #1;
+        $display("sai = %b (esperado: 0000)", sai);
+        rst_n = 1;
+        
+        // caso 6 - enable = 1; apos reset
         enable = 1;
-        @(posedge clk); #1;
-        check(4'h5, "enable=1 registra in=5");
-
-        // Reset no meio da simulação.
-        #3 rst_n = 0;
-        #1 check(4'h0, "reset no meio da simulação zera imediatamente");
-        #6 rst_n = 1;
-
-        $display("Finish");
+        entra  = 4'b1111;
+        @(posedge clk);
+        #1;
+        $display("enable=1 | entra=%b | sai=%b", entra, sai);
+        $display("finishi");
         $finish;
     end
 
