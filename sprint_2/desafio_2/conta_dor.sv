@@ -1,34 +1,54 @@
 module conta_dor(
     input  logic       clk,
-    input  logic       rst_n,
-    input  logic       enable,
-    input  logic       dir,     // 0: crescente, 1: decrescente
+    input  logic       rst_n, // ativo em 0
+    input  logic       enable, // 1 -> copia o novo valor
+    input  logic       dir, // 0 -> crescente 
     output logic [3:0] count
 );
 
-    logic [3:0] constante;
-    logic [3:0] proximo_valor;
+    logic [3:0] passo; // passo do musk
+    logic [3:0] proximo_valor; // prox_valor do contador
 
-    // Se dir=0, soma +1. Se dir=1, soma 4'b1111, que equivale a -1 em 4 bits.
     musk u_mux_dir (
-        .i0   (4'b0001),
-        .i1   (4'b1111),
-        .sel  (dir),
-        .saida(constante)
-    );
 
+        // Entrada para contagem crescente (+1)
+        .i0    (4'b0001),
+        // Entrada para contagem decrescente (-1)
+        // 1111 equivale a -1 em complemento de 2
+        .i1    (4'b1111),
+        // Seleção do MUX
+        .sel   (dir),
+        // Saída escolhida
+        .saida (passo)
+    );
     somador_dor u_somador (
-        .A(count),
-        .B(constante),
-        .C(proximo_valor)
+
+        // Valor atual do contador
+        .A (count),
+
+        // Valor escolhido pelo MUX
+        .B (passo),
+
+        // Próximo valor do contador
+        .C (proximo_valor)
     );
 
     registra_dor u_reg (
-        .clk   (clk),
-        .rst_n (rst_n),
-        .enable(enable),
-        .entra   (proximo_valor),
-        .sai   (count)
+
+        // Clock
+        .clk    (clk),
+
+        // Reset
+        .rst_n  (rst_n),
+
+        // Habilitação
+        .enable (enable),
+
+        // Entrada do registrador
+        .entra  (proximo_valor),
+
+        // Saída do registrador
+        .sai    (count)
     );
 
 endmodule
