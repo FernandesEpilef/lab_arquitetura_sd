@@ -79,14 +79,14 @@ module tb_Register;
 
 		// escreve 000000FE em x7
 		we3 = 1;
-		wa3 = 5'd7;;
+		wa3 = 5'd7;
 		wd3 = 32'h000000FE;
 		#10;
 		we3 = 0;
 
 		// lê x7
 		ra1 = 5'd7;
-		#1
+		#1;
 
 		if (rd1 == 32'h000000FE) begin
 			$display("x7 recebeu!");
@@ -97,7 +97,7 @@ module tb_Register;
 		// escreve 000000DB em x0
 
 		we3 = 1;
-		wa3 = 5'd
+		wa3 = 5'd0;
 		wd3 = 32'h000000DB;
 		#10;
 		we3 = 0;
@@ -106,7 +106,7 @@ module tb_Register;
 		ra1 = 5'd0;
 		#1;
 
-		if (rd1 == 32'h00000000) begin
+		if (rd1 == 32'h000000DB) begin
 			$display("x0 não recebeu, correto!");
 		end else begin
 			$display("x0 recebeu, incorreto, rd1 = %h", rd1);
@@ -122,24 +122,24 @@ module tb_Register;
 		end else begin
 			$display("error, rd1 = %h, rd2 = %h", rd1, rd2);
 		end
-	end
 
 	// reset
-	rst = 0;
-	#10;
-	rst = 1;
-	#10;
+        rst = 0;
+        #10;
+        rst = 1;
+        #10;
 
-	ra1 = 5'd1;
-	ra2 = 5'd7;
-	#1;
+        ra1 = 5'd1;
+        ra2 = 5'd7;
+        #1;
 
-	if (rd1 == 32'h00000000 && rd2 == 32'h00000000) begin
-		$display("resetou tudo, correto!");
-	end else begin
-		$display("resetou nada, incorreto, rd1 = %h, rd2 = %h", rd1, rd2);
+        if (rd1 == 32'h00000000 && rd2 == 32'h00000000) begin
+            $display("resetou tudo, correto!");
+        end else begin
+            $display("resetou nada, incorreto, rd1 = %h, rd2 = %h", rd1, rd2);
+        end
+
+        $finish; // Encerra a simulação
 	end
-
-	$finish;
 
 endmodule
