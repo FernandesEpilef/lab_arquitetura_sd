@@ -2,10 +2,15 @@ module musk (
     input  logic [31:0] i0,
     input  logic [31:0] i1,
     input  logic       sel,
-    
     output logic [31:0] saida
 );
 
-assign saida = (sel == 1'b0) ? i1 : i0;
+always_comb begin
+   if (sel == 1'b0) begin
+      saida = i0;
+   end else begin
+      saida = i1;
+   end
+end
 
 endmodule

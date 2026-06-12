@@ -21,9 +21,6 @@ module ULA(
             3'b011: begin
                 ULAResult = SrcA | SrcB; // OR
             end
-            3'b100: begin
-                ULAResult = ~(SrcA | SrcB); // NOR
-            end
             3'b101: begin
                 ULAResult = (SrcA < SrcB) ? 32'd1 : 32'd0; // SLT (set less than)
             end
