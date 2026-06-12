@@ -88,9 +88,8 @@ LCD_TEST MyLCD (
 
     assign LEDG = {8'b0, w_Z};
 
-    // LCD conforme o enunciado:
     // d0x0 = rd1/SrcA, d1x0 = rd2, d1x1 = SrcB, d0x4 = ULAResult.
-    // Como o LCD_TEST mostra bytes, exibimos os 8 bits menos significativos.
+    // exibe os 8 bits menos significativos.
     assign w_d0x0 = w_rd1SrcA[7:0];
     assign w_d0x1 = 8'h00;
     assign w_d0x2 = 8'h00;
