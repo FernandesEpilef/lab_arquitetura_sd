@@ -3,7 +3,7 @@
 module InstructionMemory #(
     parameter int ADDR_WIDTH = 10
 ) (
-    input  logic [ADDR_WIDTH-1:0] A,
+    input  wire  [ADDR_WIDTH-1:0] A,
     output logic [31:0]           RD
 );
 

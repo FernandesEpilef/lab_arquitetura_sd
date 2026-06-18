@@ -1,9 +1,9 @@
 `default_nettype none
 
 module ControlUnit (
-    input  logic [6:0] OP,
-    input  logic [2:0] Funct3,
-    input  logic [6:0] Funct7,
+    input  wire [6:0] OP,
+    input  wire [2:0] Funct3,
+    input  wire [6:0] Funct7,
     output logic       RegWrite,
     output logic       ULASrc,
     output logic [2:0] ULAControl

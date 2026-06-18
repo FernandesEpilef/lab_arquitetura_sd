@@ -1,7 +1,7 @@
 `default_nettype none
 
 module Extend (
-    input  logic [11:0] ImmIn,
+    input  wire  [11:0] ImmIn,
     output logic [31:0] ImmOut
 );
 

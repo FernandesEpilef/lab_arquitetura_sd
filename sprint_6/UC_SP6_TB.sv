@@ -1,7 +1,7 @@
 `timescale 1ns/1ps
 
 module UC_SP6_TB;
-    logic [21:0] Vetor_teste [7:0];
+    logic [21:0] Vetor_teste [0:7];
     logic [6:0]  OP, Funct7;
     logic [4:0]  Out_esperado;
     logic [3:0]  Cont;

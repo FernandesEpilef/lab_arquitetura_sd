@@ -3,7 +3,7 @@
 // Decodificador hexadecimal para os displays da placa DE2.
 // Os segmentos sao ativos em nivel baixo e seguem a ordem [0:6].
 module Hex7Seg (
-    input  logic [3:0] hex,
+    input  wire  [3:0] hex,
     output logic [0:6] seg
 );
     always_comb begin

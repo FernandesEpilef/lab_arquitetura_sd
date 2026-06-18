@@ -1,8 +1,8 @@
 `default_nettype none
 
 module ProcessorRV32_v01 (
-    input  logic        clk,
-    input  logic        rst,
+    input  wire         clk,
+    input  wire         rst,
     output logic [31:0] w_PC,
     output logic [31:0] w_Inst,
     output logic        w_RegWrite,

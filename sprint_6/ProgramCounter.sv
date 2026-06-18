@@ -1,9 +1,9 @@
 `default_nettype none
 
 module ProgramCounter (
-    input  logic        clk,
-    input  logic        rst,
-    input  logic [31:0] PCin,
+    input  wire         clk,
+    input  wire         rst,
+    input  wire  [31:0] PCin,
     output logic [31:0] PC
 );
 

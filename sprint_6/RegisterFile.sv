@@ -1,13 +1,13 @@
 `default_nettype none
 
 module RegisterFile (
-    input  logic        clk,
-    input  logic        rst,
-    input  logic [31:0] wd3,
-    input  logic [4:0]  wa3,
-    input  logic        we3,
-    input  logic [4:0]  ra1,
-    input  logic [4:0]  ra2,
+    input  wire         clk,
+    input  wire         rst,
+    input  wire  [31:0] wd3,
+    input  wire  [4:0]  wa3,
+    input  wire         we3,
+    input  wire  [4:0]  ra1,
+    input  wire  [4:0]  ra2,
     output logic [31:0] rd1,
     output logic [31:0] rd2,
     output logic [31:0] x0,

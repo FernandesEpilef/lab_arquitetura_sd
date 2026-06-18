@@ -81,7 +81,7 @@ function [8:0] hex2char;
 	hex2char = (h>9 ? 9'h137 : 9'h130) + h;	
 endfunction
 
-always
+always @(*)
 begin
 	case(LUT_INDEX)
 	//	Initial
@@ -106,7 +106,7 @@ begin
 	LCD_LINE1+12:	LUT_DATA	<=	hex2char(d0x4[ 7: 4]);             
 	LCD_LINE1+13:	LUT_DATA	<=	hex2char(d0x4[ 3: 0]);
 	LCD_LINE1+14:	LUT_DATA	<=	9'h120;
-	LCD_LINE1+15:	LUT_DATA	<=	hex2char(d0x5[ 3: 0]);
+	LCD_LINE1+15:	LUT_DATA	<=	9'h120; // espaco: apenas x0, x1, x2, x3 e PC
 	//	Change Line               
 	LCD_CH_LINE:	LUT_DATA	<=  9'h0C0;	                    
 	//	Line 2                    
@@ -122,10 +122,10 @@ begin
 	LCD_LINE2+9:	LUT_DATA	<=	hex2char(d1x3[ 7: 4]);          
 	LCD_LINE2+10:	LUT_DATA	<=	hex2char(d1x3[ 3: 0]);
 	LCD_LINE2+11:	LUT_DATA	<=	9'h120;
-	LCD_LINE2+12:	LUT_DATA	<=	hex2char(d1x4[ 7: 4]);             
-	LCD_LINE2+13:	LUT_DATA	<=	hex2char(d1x4[ 3: 0]);
+	LCD_LINE2+12:	LUT_DATA	<=	9'h120; // espacos depois de x7
+	LCD_LINE2+13:	LUT_DATA	<=	9'h120;
 	LCD_LINE2+14:	LUT_DATA	<=	9'h120;
-	LCD_LINE2+15:	LUT_DATA	<=	hex2char(d1x5[ 3: 0]);
+	LCD_LINE2+15:	LUT_DATA	<=	9'h120;
 	default:	    LUT_DATA	<=	9'h120;
 	endcase
 end
