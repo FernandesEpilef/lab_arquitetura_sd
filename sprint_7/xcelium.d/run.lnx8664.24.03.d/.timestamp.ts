@@ -1,9 +1,0 @@
-1783012730 /home/xmen-aluno/Desktop/lab_arquitetura_sd/sprint_7/ProcessorRV32_v02.sv
-1783012730 /home/xmen-aluno/Desktop/lab_arquitetura_sd/sprint_7/ProgramCounter.sv
-1783012730 /home/xmen-aluno/Desktop/lab_arquitetura_sd/sprint_7/data_memori.sv
-1783012989 /home/xmen-aluno/Desktop/lab_arquitetura_sd/sprint_7/ProcessorRV32_v02_TB.sv
-1783012730 /home/xmen-aluno/Desktop/lab_arquitetura_sd/sprint_7/Extend.sv
-1783012730 /home/xmen-aluno/Desktop/lab_arquitetura_sd/sprint_7/InstructionMemory.sv
-1783012730 /home/xmen-aluno/Desktop/lab_arquitetura_sd/sprint_7/ControlUnit.sv
-1783012730 /home/xmen-aluno/Desktop/lab_arquitetura_sd/sprint_7/RegisterFile.sv
-1783012730 /home/xmen-aluno/Desktop/lab_arquitetura_sd/sprint_7/ULA.sv
