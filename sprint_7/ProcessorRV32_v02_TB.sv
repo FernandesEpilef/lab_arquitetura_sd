@@ -31,7 +31,8 @@ module ProcessorRV32_v02_TB;
     // Clock
     // =========================================
 
-    initial clk = 1'b0;
+    initial
+        clk = 1'b0;
 
     always #5 clk = ~clk;
 
@@ -40,7 +41,7 @@ module ProcessorRV32_v02_TB;
     // DUT
     // =========================================
 
-    ProcessorRV32_v01 dut (
+    ProcessorRV32_v02 dut (
 
         .clk(clk),
         .rst(rst),
@@ -107,26 +108,37 @@ module ProcessorRV32_v02_TB;
     initial begin
 
         // -------------------------------------
-        // Inicialização
+        // Dump de waveform
+        // -------------------------------------
+
+        $dumpfile("processor_rv32_v02_tb.vcd");
+        $dumpvars(0, ProcessorRV32_v02_TB);
+
+
+        // -------------------------------------
+        // Reset
         // -------------------------------------
 
         rst = 1'b0;
 
-        // Mantém reset ativo por 2 clocks
         repeat (2) @(posedge clk);
 
         rst = 1'b1;
 
         $display("");
+        $display("=====================================");
         $display("RESET LIBERADO");
+        $display("=====================================");
         $display("");
 
 
         // -------------------------------------
-        // Executa instruções
+        // Espera execução completa
         // -------------------------------------
 
-        repeat (8) @(posedge clk);
+        wait (x4 == 32'h000000AB);
+
+        @(posedge clk);
 
         #1;
 
@@ -156,19 +168,25 @@ module ProcessorRV32_v02_TB;
         // =====================================
 
         if (dut.DM.mem[10] !== 32'h000000AB)
-            $fatal(1,
-                   "mem[10] incorreta: %h",
-                   dut.DM.mem[10]);
+            $fatal(
+                1,
+                "mem[10] incorreta: %h",
+                dut.DM.mem[10]
+            );
 
         if (dut.DM.mem[11] !== 32'h000000AB)
-            $fatal(1,
-                   "mem[11] incorreta: %h",
-                   dut.DM.mem[11]);
+            $fatal(
+                1,
+                "mem[11] incorreta: %h",
+                dut.DM.mem[11]
+            );
 
         if (dut.DM.mem[12] !== 32'h000000AB)
-            $fatal(1,
-                   "mem[12] incorreta: %h",
-                   dut.DM.mem[12]);
+            $fatal(
+                1,
+                "mem[12] incorreta: %h",
+                dut.DM.mem[12]
+            );
 
 
         // =====================================

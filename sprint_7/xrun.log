@@ -1,0 +1,349 @@
+xrun(64): 24.03-s005: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	24.03-s005: Started on Jul 02, 2026 at 14:23:11 -03
+xrun
+	-sv
+	-timescale 1ns/1ps
+	ProcessorRV32_v02.sv
+	ProgramCounter.sv
+	InstructionMemory.sv
+	ControlUnit.sv
+	Extend.sv
+	RegisterFile.sv
+	ULA.sv
+	data_memori.sv
+	ProcessorRV32_v02_TB.sv
+Recompiling... reason: file './ProcessorRV32_v02_TB.sv' is newer than expected.
+	expected: Thu Jul  2 14:23:01 2026
+	actual:   Thu Jul  2 14:23:09 2026
+file: ProcessorRV32_v02_TB.sv
+	module worklib.ProcessorRV32_v02_TB:sv
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		ProcessorRV32_v02_TB
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.ProcessorRV32_v02_TB:sv <0x47edd164>
+			streams:  15, words: 29645
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 9       9
+		Registers:              67      67
+		Scalar wires:           21       -
+		Vectored wires:         77       -
+		Always blocks:           9       9
+		Initial blocks:          2       2
+		Cont. assignments:      11      15
+		Pseudo assignments:     40       -
+		Process Clocks:          3       1
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.ProcessorRV32_v02_TB:sv
+Loading snapshot worklib.ProcessorRV32_v02_TB:sv .................... Done
+xcelium> source /usr/local/cadence/XCELIUM2403/tools/xcelium/files/xmsimrc
+xcelium> run
+xmsim: *W,DVEXACC: some objects excluded from $dumpvars due to access restrictions, use +access+r on command line for access to all objects.
+            File: ./ProcessorRV32_v02_TB.sv, line = 115, pos = 16
+           Scope: ProcessorRV32_v02_TB
+            Time: 0 FS + 0
+
+========================================
+TIME       = 5000
+PC         = 00000000
+INST       = 00000013
+RegWrite   = 1
+ULASrc     = 1
+ULAControl = 000
+Imm        = 00000000
+rd1        = 00000000
+rd2        = 00000000
+SrcB       = 00000000
+ULAResult  = 00000000
+wd3        = 00000000
+x1         = 00000000
+x2         = 00000000
+x3         = 00000000
+x4         = 00000000
+========================================
+TIME       = 15000
+PC         = 00000000
+INST       = 00000013
+RegWrite   = 1
+ULASrc     = 1
+ULAControl = 000
+Imm        = 00000000
+rd1        = 00000000
+rd2        = 00000000
+SrcB       = 00000000
+ULAResult  = 00000000
+wd3        = 00000000
+x1         = 00000000
+x2         = 00000000
+x3         = 00000000
+x4         = 00000000
+
+=====================================
+RESET LIBERADO
+=====================================
+
+========================================
+TIME       = 25000
+PC         = 00000004
+INST       = 00000013
+RegWrite   = 1
+ULASrc     = 1
+ULAControl = 000
+Imm        = 00000000
+rd1        = 00000000
+rd2        = 00000000
+SrcB       = 00000000
+ULAResult  = 00000000
+wd3        = 00000000
+x1         = 00000000
+x2         = 00000000
+x3         = 00000000
+x4         = 00000000
+========================================
+TIME       = 35000
+PC         = 00000008
+INST       = 00000013
+RegWrite   = 1
+ULASrc     = 1
+ULAControl = 000
+Imm        = 00000000
+rd1        = 00000000
+rd2        = 00000000
+SrcB       = 00000000
+ULAResult  = 00000000
+wd3        = 00000000
+x1         = 00000000
+x2         = 00000000
+x3         = 00000000
+x4         = 00000000
+========================================
+TIME       = 45000
+PC         = 0000000c
+INST       = 00000013
+RegWrite   = 1
+ULASrc     = 1
+ULAControl = 000
+Imm        = 00000000
+rd1        = 00000000
+rd2        = 00000000
+SrcB       = 00000000
+ULAResult  = 00000000
+wd3        = 00000000
+x1         = 00000000
+x2         = 00000000
+x3         = 00000000
+x4         = 00000000
+========================================
+TIME       = 55000
+PC         = 00000010
+INST       = 00000013
+RegWrite   = 1
+ULASrc     = 1
+ULAControl = 000
+Imm        = 00000000
+rd1        = 00000000
+rd2        = 00000000
+SrcB       = 00000000
+ULAResult  = 00000000
+wd3        = 00000000
+x1         = 00000000
+x2         = 00000000
+x3         = 00000000
+x4         = 00000000
+========================================
+TIME       = 65000
+PC         = 00000014
+INST       = 00000013
+RegWrite   = 1
+ULASrc     = 1
+ULAControl = 000
+Imm        = 00000000
+rd1        = 00000000
+rd2        = 00000000
+SrcB       = 00000000
+ULAResult  = 00000000
+wd3        = 00000000
+x1         = 00000000
+x2         = 00000000
+x3         = 00000000
+x4         = 00000000
+========================================
+TIME       = 75000
+PC         = 00000018
+INST       = 00000013
+RegWrite   = 1
+ULASrc     = 1
+ULAControl = 000
+Imm        = 00000000
+rd1        = 00000000
+rd2        = 00000000
+SrcB       = 00000000
+ULAResult  = 00000000
+wd3        = 00000000
+x1         = 00000000
+x2         = 00000000
+x3         = 00000000
+x4         = 00000000
+========================================
+TIME       = 85000
+PC         = 0000001c
+INST       = 0ab00093
+RegWrite   = 1
+ULASrc     = 1
+ULAControl = 000
+Imm        = 000000ab
+rd1        = 00000000
+rd2        = 00000000
+SrcB       = 000000ab
+ULAResult  = 000000ab
+wd3        = 000000ab
+x1         = 00000000
+x2         = 00000000
+x3         = 00000000
+x4         = 00000000
+========================================
+TIME       = 95000
+PC         = 00000020
+INST       = 00102523
+RegWrite   = 0
+ULASrc     = 1
+ULAControl = 000
+Imm        = 0000000a
+rd1        = 00000000
+rd2        = 000000ab
+SrcB       = 0000000a
+ULAResult  = 0000000a
+wd3        = 0000000a
+x1         = 000000ab
+x2         = 00000000
+x3         = 00000000
+x4         = 00000000
+========================================
+TIME       = 105000
+PC         = 00000024
+INST       = 00a02103
+RegWrite   = 1
+ULASrc     = 1
+ULAControl = 000
+Imm        = 0000000a
+rd1        = 00000000
+rd2        = 00000000
+SrcB       = 0000000a
+ULAResult  = 0000000a
+wd3        = 000000ab
+x1         = 000000ab
+x2         = 00000000
+x3         = 00000000
+x4         = 00000000
+========================================
+TIME       = 115000
+PC         = 00000028
+INST       = 002025a3
+RegWrite   = 0
+ULASrc     = 1
+ULAControl = 000
+Imm        = 0000000b
+rd1        = 00000000
+rd2        = 000000ab
+SrcB       = 0000000b
+ULAResult  = 0000000b
+wd3        = 0000000b
+x1         = 000000ab
+x2         = 000000ab
+x3         = 00000000
+x4         = 00000000
+========================================
+TIME       = 125000
+PC         = 0000002c
+INST       = 00b02183
+RegWrite   = 1
+ULASrc     = 1
+ULAControl = 000
+Imm        = 0000000b
+rd1        = 00000000
+rd2        = 00000000
+SrcB       = 0000000b
+ULAResult  = 0000000b
+wd3        = 000000ab
+x1         = 000000ab
+x2         = 000000ab
+x3         = 00000000
+x4         = 00000000
+========================================
+TIME       = 135000
+PC         = 00000030
+INST       = 00302623
+RegWrite   = 0
+ULASrc     = 1
+ULAControl = 000
+Imm        = 0000000c
+rd1        = 00000000
+rd2        = 000000ab
+SrcB       = 0000000c
+ULAResult  = 0000000c
+wd3        = 0000000c
+x1         = 000000ab
+x2         = 000000ab
+x3         = 000000ab
+x4         = 00000000
+========================================
+TIME       = 145000
+PC         = 00000034
+INST       = 00c02203
+RegWrite   = 1
+ULASrc     = 1
+ULAControl = 000
+Imm        = 0000000c
+rd1        = 00000000
+rd2        = 00000000
+SrcB       = 0000000c
+ULAResult  = 0000000c
+wd3        = 000000ab
+x1         = 000000ab
+x2         = 000000ab
+x3         = 000000ab
+x4         = 00000000
+========================================
+TIME       = 155000
+PC         = 00000038
+INST       = 00000013
+RegWrite   = 1
+ULASrc     = 1
+ULAControl = 000
+Imm        = 00000000
+rd1        = 00000000
+rd2        = 00000000
+SrcB       = 00000000
+ULAResult  = 00000000
+wd3        = 00000000
+x1         = 000000ab
+x2         = 000000ab
+x3         = 000000ab
+x4         = 000000ab
+
+=====================================
+PASSOU: Sprint 7 funcionando.
+=====================================
+
+REGISTRADORES:
+x0 = 00000000
+x1 = 000000ab
+x2 = 000000ab
+x3 = 000000ab
+x4 = 000000ab
+
+MEMORIA:
+mem[10] = 000000ab
+mem[11] = 000000ab
+mem[12] = 000000ab
+
+Simulation complete via $finish(1) at time 156 NS + 0
+./ProcessorRV32_v02_TB.sv:218         $finish;
+xcelium> exit
+TOOL:	xrun(64)	24.03-s005: Exiting on Jul 02, 2026 at 14:23:21 -03  (total: 00:00:10)

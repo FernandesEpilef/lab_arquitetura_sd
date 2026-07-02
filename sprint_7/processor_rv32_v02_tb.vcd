@@ -1,0 +1,27 @@
+$date
+    Jul  2, 2026  14:23:21
+$end
+$version
+    TOOL:	xmsim(64)	24.03-s005
+$end
+$timescale
+    1 ps
+$end
+
+$scope module ProcessorRV32_v02_TB $end
+
+$scope module dut $end
+
+$scope module IM_rv $end
+$var parameter 32 !    ADDR_WIDTH $end
+$upscope $end
+
+$upscope $end
+
+$upscope $end
+
+$enddefinitions $end
+$dumpvars
+b1010 !
+$end
+#156000

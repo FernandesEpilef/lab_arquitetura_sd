@@ -1,0 +1,27 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+-XLMODE
+./xcelium.d/run.lnx8664.24.03.d
+-RUNMODE
+-sv
+ProcessorRV32_v02.sv
+ProgramCounter.sv
+InstructionMemory.sv
+ControlUnit.sv
+Extend.sv
+RegisterFile.sv
+ULA.sv
+data_memori.sv
+ProcessorRV32_v02_TB.sv
+-CDSLIB
+./xcelium.d/run.lnx8664.24.03.d/cdsrun.lib
+-HDLVAR
+./xcelium.d/run.lnx8664.24.03.d/hdlrun.var
+-no_analogsolver
+-MESSAGES
+-UPDATE
+-XLLIBSTORE
+./xcelium.d/run.lnx8664.24.03.d/xllibs
+-ALLOWUNBOUND
