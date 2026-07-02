@@ -20,7 +20,7 @@ module UC_SP6_TB;
   initial
     begin
       $dumpfile("test.vcd"); $dumpvars(1);
-      $readmemb("test_vector.txt", Vetor_teste);
+      $readmemb("test_vector_SP7.txt", Vetor_teste);
       Cont_linhas_VT = 0;
       Cont_PASSOU = 0;
       Cont_FALHOU = 0;
