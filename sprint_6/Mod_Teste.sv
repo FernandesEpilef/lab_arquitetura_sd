@@ -10,7 +10,7 @@ output [0:6] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6, HEX7,
 output [8:0] LEDG,
 output [17:0] LEDR,
 //Serial
-output UART_TXD,
+//output UART_TXD,
 input UART_RXD,
 inout [7:0] LCD_DATA,
 output LCD_ON, LCD_BLON, LCD_RW, LCD_EN, LCD_RS,
@@ -47,8 +47,8 @@ logic [31:0] w_x0, w_x1, w_x2, w_x3;
 logic [31:0] w_x4, w_x5, w_x6, w_x7;
 
 // Instancia do processador completo.
-// KEY[1] funciona como clock manual.
-// KEY[0] funciona como reset ativo em nivel baixo.
+// KEY[1] clock
+// KEY[0  reset
 ProcessorRV32_v01 CPU (
     .clk          (KEY[1]),
     .rst          (KEY[0]),
@@ -111,8 +111,8 @@ Hex7Seg H5 (.hex(w_Inst[23:20]), .seg(HEX5));
 Hex7Seg H6 (.hex(w_Inst[27:24]), .seg(HEX6));
 Hex7Seg H7 (.hex(w_Inst[31:28]), .seg(HEX7));
 
-// Interfaces que nao sao utilizadas nesta sprint.
-assign UART_TXD = 1'b1;
+// Interfaces que nao utilizadas
+//assign UART_TXD = 1'b1;
 
 endmodule
 
