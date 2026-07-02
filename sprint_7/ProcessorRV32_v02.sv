@@ -1,5 +1,5 @@
 
-module ProcessorRV32_v01 (
+module ProcessorRV32_v02 (
     input  wire         clk,
     input  wire         rst,
 

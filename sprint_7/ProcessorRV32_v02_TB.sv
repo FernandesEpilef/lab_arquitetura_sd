@@ -3,8 +3,12 @@
 
 module ProcessorRV32_v02_TB;
 
-    logic clk = 1'b0;
-    logic rst = 1'b1;
+    // =========================================
+    // Sinais
+    // =========================================
+
+    logic clk;
+    logic rst;
 
     logic [31:0] w_PC;
     logic [31:0] w_Inst;
@@ -22,9 +26,12 @@ module ProcessorRV32_v02_TB;
     logic [31:0] x6;
     logic [31:0] x7;
 
+
     // =========================================
-    // Clock de 10 ns
+    // Clock
     // =========================================
+
+    initial clk = 1'b0;
 
     always #5 clk = ~clk;
 
@@ -34,6 +41,7 @@ module ProcessorRV32_v02_TB;
     // =========================================
 
     ProcessorRV32_v01 dut (
+
         .clk(clk),
         .rst(rst),
 
@@ -52,32 +60,73 @@ module ProcessorRV32_v02_TB;
         .x5(x5),
         .x6(x6),
         .x7(x7)
+
     );
 
 
     // =========================================
-    // Simulação
+    // Debug
+    // =========================================
+
+    always @(posedge clk) begin
+
+        $display("========================================");
+
+        $display("TIME       = %0t", $time);
+
+        $display("PC         = %h", w_PC);
+        $display("INST       = %h", w_Inst);
+
+        $display("RegWrite   = %b", w_RegWrite);
+        $display("ULASrc     = %b", w_ULASrc);
+        $display("ULAControl = %b", w_ULAControl);
+
+        $display("Imm        = %h", dut.w_Imm);
+
+        $display("rd1        = %h", dut.w_rd1);
+        $display("rd2        = %h", dut.w_rd2);
+
+        $display("SrcB       = %h", dut.w_SrcB);
+
+        $display("ULAResult  = %h", dut.w_ULAResult);
+
+        $display("wd3        = %h", dut.w_wd3);
+
+        $display("x1         = %h", x1);
+        $display("x2         = %h", x2);
+        $display("x3         = %h", x3);
+        $display("x4         = %h", x4);
+
+    end
+
+
+    // =========================================
+    // Simulação principal
     // =========================================
 
     initial begin
 
         // -------------------------------------
-        // Reset
+        // Inicialização
         // -------------------------------------
 
-        #1;
         rst = 1'b0;
 
-        #2;
+        // Mantém reset ativo por 2 clocks
+        repeat (2) @(posedge clk);
+
         rst = 1'b1;
 
+        $display("");
+        $display("RESET LIBERADO");
+        $display("");
+
 
         // -------------------------------------
-        // Executa as instruções
+        // Executa instruções
         // -------------------------------------
 
-        // 7 instruções da Sprint 7
-        repeat (7) @(posedge clk);
+        repeat (8) @(posedge clk);
 
         #1;
 
@@ -107,15 +156,18 @@ module ProcessorRV32_v02_TB;
         // =====================================
 
         if (dut.DM.mem[10] !== 32'h000000AB)
-            $fatal(1, "mem[10] incorreta: %h",
+            $fatal(1,
+                   "mem[10] incorreta: %h",
                    dut.DM.mem[10]);
 
         if (dut.DM.mem[11] !== 32'h000000AB)
-            $fatal(1, "mem[11] incorreta: %h",
+            $fatal(1,
+                   "mem[11] incorreta: %h",
                    dut.DM.mem[11]);
 
         if (dut.DM.mem[12] !== 32'h000000AB)
-            $fatal(1, "mem[12] incorreta: %h",
+            $fatal(1,
+                   "mem[12] incorreta: %h",
                    dut.DM.mem[12]);
 
 
@@ -123,9 +175,11 @@ module ProcessorRV32_v02_TB;
         // Resultado final
         // =====================================
 
+        $display("");
         $display("=====================================");
         $display("PASSOU: Sprint 7 funcionando.");
         $display("=====================================");
+        $display("");
 
         $display("REGISTRADORES:");
         $display("x0 = %h", x0);
@@ -141,9 +195,10 @@ module ProcessorRV32_v02_TB;
         $display("mem[11] = %h", dut.DM.mem[11]);
         $display("mem[12] = %h", dut.DM.mem[12]);
 
+        $display("");
+
         $finish;
 
     end
 
 endmodule
-
